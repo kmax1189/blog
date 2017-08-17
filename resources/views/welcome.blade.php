@@ -6,9 +6,7 @@
     </head>
 
     <body>
-        <h1>
-                    GIVE ME MONEY
-        </h1>
+        <h1>Hello <?php echo $name; ?> </h1>
 
     </body>
 </html>

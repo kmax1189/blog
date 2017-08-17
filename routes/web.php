@@ -12,7 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $tasks = [
+
+        'Masturbate'
+
+        'Again'
+
+        'Yup, you guessed it'
+
+    ];
+    
+    return view('welcome', compact('tasks'));
 });
 
 Route::get('/about', function () {
