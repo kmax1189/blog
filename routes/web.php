@@ -15,14 +15,14 @@ Route::get('/', function () {
 
     $tasks = [
 
-        'Masturbate'
+        'Masturbate',
 
-        'Again'
+        'Again',
 
         'Yup, you guessed it'
 
     ];
-    
+
     return view('welcome', compact('tasks'));
 });
 
