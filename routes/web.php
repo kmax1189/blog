@@ -11,21 +11,22 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/tasks', function () {
 
-    $tasks = [
+    $tasks = DB::table('tasks')->latest()->get();
 
-        'Masturbate',
 
-        'Again',
-
-        'Yup, you guessed it'
-
-    ];
-
-    return view('welcome', compact('tasks'));
+    return view('tasks.index', compact('tasks'));
 });
 
 Route::get('/about', function () {
     return view('about');
+});
+
+
+Route::get('/tasks/{task}', function ($id) {
+
+    $task = DB::table('tasks')->find($id);
+
+    return view('tasks.show', compact('task'));
 });
