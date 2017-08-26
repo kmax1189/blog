@@ -1,9 +1,5 @@
 <?php
 
-Route::get('/', 'TasksController@home');
+Route::get('/', 'PostsController@index');
 
-Route::get('/tasks', 'TasksController@index');
-
-Route::get('/about', 'TasksController@about');
-
-Route::get('/tasks/{task}', 'TasksController@show');
+Route::get('/posts/{post}', 'PostsController@show');
