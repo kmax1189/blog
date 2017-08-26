@@ -2,6 +2,14 @@
 
 use App\Task;
 
+Route::get('/', function () {
+
+    $tasks = Task::all();
+
+
+    return view('tasks.index', compact('tasks'));
+});
+
 Route::get('/tasks', function () {
 
     $tasks = Task::all();
