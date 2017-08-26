@@ -1,31 +1,9 @@
 <?php
 
-use App\Task;
+Route::get('/', 'TasksController@home');
 
-Route::get('/', function () {
+Route::get('/tasks', 'TasksController@index');
 
-    $tasks = Task::all();
+Route::get('/about', 'TasksController@about');
 
-
-    return view('tasks.index', compact('tasks'));
-});
-
-Route::get('/tasks', function () {
-
-    $tasks = Task::all();
-
-
-    return view('tasks.index', compact('tasks'));
-});
-
-Route::get('/about', function () {
-    return view('about');
-});
-
-
-Route::get('/tasks/{task}', function ($id) {
-
-    $task = Task::find($id);
-
-    return view('tasks.show', compact('task'));
-});
+Route::get('/tasks/{task}', 'TasksController@show');
