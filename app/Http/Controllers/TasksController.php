@@ -9,31 +9,29 @@ class TasksController extends Controller
     public function home()
 
     {
-      $tasks = Task::all();
+        $tasks = Task::all();
 
-      return view('tasks.index', compact('tasks'));
+        return view('tasks.index', compact('tasks'));
     }
 
     public function index()
 
     {
-      $tasks = Task::all();
+        $tasks = Task::all();
 
-      return view('tasks.index', compact('tasks'));
+        return view('tasks.index', compact('tasks'));
     }
 
     public function about()
 
     {
-      return view('about');
+        return view('about');
     }
 
-    public function show($id)
+    public function show(Task $task)
 
     {
-      $task = Task::find($id);
-
-      return view('tasks.show', compact('task'));
+        return view('tasks.show', compact('task'));
     }
 
 }
